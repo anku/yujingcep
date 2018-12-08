@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./lib/bootstrap.min.css">
+<script src="./lib/vue.js"> </script>
+<body>
+    <div id="app">
+         <div>
+             <input type="button" value="登录" @click.prevent="comp='logincomp'">
+             <input type="button" value="注册" @click.prevent="comp='regcomp'">
+         </div>
+
+<hr>
+         <component v-bind:is="comp"></component>
+
+    </div>
+ 
+    <template id="logincompTempID">
+        <div>      
+            qq我登录了component。。。。。。。。。。。。                    
+        </div>
+    </template>
+
+    <template id="regcompTempID">
+            <div>      
+                ww我注册了component。。。。。。。。。。。。                    
+            </div>
+        </template>
+
+ 
+ 
+    <script>
+ 
+ 
+Vue.component("logincomp",{
+        template:"#logincompTempID"     
+})
+
+Vue.component("regcomp",{
+    template:"#regcompTempID"
+})
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            flag:true,
+            comp:'logincomp'
+        },
+        components:{
+         
+        },
+        methods:{
+            // loginHandler(){
+            //    this.flag = true;
+            // },
+            // regHandler(){
+            //     this.flag = false;  
+            // }
+
+        }
+    })
+    
+    
+    </script>
+</body>
+</html>

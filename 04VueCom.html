@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./lib/bootstrap.min.css">
+<script src="./lib/vue.js"> </script>
+<body>
+    <div id="app">
+        <com3></com3>
+        <head2></head2>
+        <!-- <login></login> -->
+       
+    </div>
+<div id="app2">
+    <com3></com3>
+    <login></login>
+</div>
+
+
+<template id="temp">
+    <div>
+        <H1>title</H1>
+        <div>container.....</div>
+        <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>sss</th>
+                        <th>sss</th>
+                        <th>sss</th>
+                        <th>sss</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>dddde</td>
+                        <td>dddde</td>
+                        <td>dddde</td>
+                        <td>dddde</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+    </div>
+    
+    
+
+    
+
+
+</template>
+<template id="temp2">
+        <h1>系统头组件。。。。</h1>
+</template>
+<template id="loginTemp">
+        <h1>登录组件loginTemp。。。。</h1>
+</template>
+    <script>
+ 
+     Vue.component("com3",{
+         template:'#temp'
+     })
+
+
+
+    var vm = new Vue({
+        el:"#app",
+        data:{},
+        components:{
+         head2:{
+              template:'#temp2'  
+          }
+        },
+        methods:{}
+    })
+    var vm2 = new Vue({
+        el:"#app2",
+        data:{},
+        methods:{},
+        directives:{},
+        filters: {},
+        components:{
+          login:{
+              template:'#loginTemp'  
+          }
+        },
+        beforeCreate() {},
+        created() { },
+        beforeMount () {},
+        mounted () {},
+        beforeUpdate () {},
+        updated () {},
+        beforeDestroy () {},
+        destroyed() {},
+
+    })
+    
+    </script>
+</body>
+</html>

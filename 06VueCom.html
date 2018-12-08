@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./lib/bootstrap.min.css">
+<script src="./lib/vue.js"> </script>
+<body>
+    <div id="app">
+        <mycomp></mycomp>
+        <mycomp></mycomp>
+    </div>
+ 
+    <template id="tempId">
+        <div>
+           
+            <div>
+                    <input type="button" value="count+1" @click="countHandler"><br>
+                {{count}}</div>
+                 
+        </div>
+
+    </template>
+
+
+ 
+ 
+    <script>
+ 
+ 
+Vue.component("mycomp",{
+
+        template:"#tempId",
+        data:function(){
+            return  {
+                     count:0,
+            }
+        },
+        methods:{
+            countHandler(){
+                this.count++;
+            }  
+        }
+})
+
+
+
+    var vm = new Vue({
+        el:"#app",
+        data:{},
+        components:{
+         
+        },
+        methods:{}
+    })
+    
+    
+    </script>
+</body>
+</html>

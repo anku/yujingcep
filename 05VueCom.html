@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./lib/bootstrap.min.css">
+<script src="./lib/vue.js"> </script>
+<body>
+    <div id="app">
+        <mycomp></mycomp>
+       
+    </div>
+    <div id="app2">
+        
+    </div>
+
+
+ 
+ 
+    <script>
+ 
+        Vue.component("mycomp",{
+
+            template:"<h3>这是{{msg}}创建得data数据{{code}}</h3>",
+            data:function(){
+                return {
+                        msg:"朱文奇,heh",
+                        code:"1100"
+                }
+            }
+
+        });
+
+
+    var vm = new Vue({
+        el:"#app",
+        data:{},
+        components:{
+         
+        },
+        methods:{}
+    })
+    var vm2 = new Vue({
+        el:"#app2",
+        data:{},
+        methods:{},
+        directives:{},
+        filters: {},
+        components:{
+          login:{
+              template:'#loginTemp'  
+          }
+        },
+        beforeCreate() {},
+        created() { },
+        beforeMount () {},
+        mounted () {},
+        beforeUpdate () {},
+        updated () {},
+        beforeDestroy () {},
+        destroyed() {},
+
+    })
+    
+    </script>
+</body>
+</html>

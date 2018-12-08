@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="./lib/vue.js"> </script>
+<body>
+    <div id="app">
+    <tempcom></tempcom>
+    <newcomp></newcomp>
+    <new-comp></new-comp>
+    <my-new-comp></my-new-comp>
+    <my-new-comp></my-new-comp>
+    </div>
+    <script>
+ 
+    Vue.component("tempcom",{
+
+        template:'<h3>tempcom 不是驼峰法</h3>'
+
+    });
+    Vue.component("newcomp",{
+            template:'<h5>这是朱文奇第一个些得组件</h5>'
+    })  
+    Vue.component("newComp",{
+            template:'<h5>anku第二个个些得组件</h5>'
+    })  
+
+//-------------------------------------------
+
+var testComp = Vue.extend({
+    template:'<h3>test he3</h3>'
+})
+Vue.component("myNewComp",testComp);
+
+
+
+
+
+
+    var vm = new Vue({
+        el:"#app",
+        data:{},
+        methods:{}
+    })
+    
+    
+    </script>
+</body>
+</html>
